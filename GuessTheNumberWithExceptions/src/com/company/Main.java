@@ -14,64 +14,59 @@ public class Main {
         String a = sc.next();//string exception
         System.out.println("Well, " + a + ", I am thinking of a number between 1 and 20.");
 
-        while (playAgain.equalsIgnoreCase("Y")) {// allows for play again
+        while (playAgain.equalsIgnoreCase("Y") && error == true) {// allows for play again
             System.out.println("Take a guess.");
 
             Random rand = new Random();
             int y = rand.nextInt(20) + 1;
 
-            do{
-                try {
-                    int x = sc.nextInt();//integer exception start
-                    int guesses = 1;
-                    guesses++;
-                    //int i = 1;
-                    int limit = 7;
-                    boolean notInt = true;
-                    while (guesses < limit && x != y) {// allows for multiple guesses
-                        if (x < y) {
-                            System.out.println("Your guess is too low.");
-                            System.out.println("Take a guess.");
-                            do {
-                                try {
-                                    x = sc.nextInt();
-                                    notInt = false;
-                                } catch (Exception e) {
-                                    System.out.println("Input Error. Please enter a number between 1 and 20");
-                                    sc.next();
-                                }
-                            }while (notInt = true);
-                            guesses++;
-                        } else if (x > y) {
-                            System.out.println("Your guess is too high.");
-                            System.out.println("Take a guess.");
-                            do {
-                                try {
-                                    x = sc.nextInt();
-                                    notInt = false;
-                                } catch (Exception e) {
-                                    System.out.println("Input Error. Please enter a number between 1 and 20");
-                                    sc.next();
-                                }
-                            }while (notInt = true);
-                            guesses++;
+
+            try {
+                int x = sc.nextInt();//integer exception start
+                int guesses = 1;
+                guesses++;
+                int limit = 7;
+                boolean notInt = true;
+                while (guesses < limit && x != y) {// allows for multiple guesses
+                    if (x < y) {
+                        System.out.println("Your guess is too low.");
+                        System.out.println("Take a guess.");
+                        try {
+                            x = sc.nextInt();
+                            notInt = false;
                         }
-                        if (x == y) {
-                            System.out.println("Good job " + a + "! You guessed my number in " + (guesses - 1) + " guesses!");
-                            System.out.println("Would you like to play again? (y or n) ");
-                        }//integer exception end
+                        catch (Exception e) {
+                            System.out.println("Input Error. Please enter a number between 1 and 20");
+                            sc.next();
+                        }
+                        guesses++;
                     }
-                    error = false;
+                    else if (x > y) {
+                        System.out.println("Your guess is too high.");
+                        System.out.println("Take a guess.");
+                        try {
+                            x = sc.nextInt();
+                            notInt = false;
+                        }
+                        catch (Exception e) {
+                            System.out.println("Input Error. Please enter a number between 1 and 20");
+                            sc.next();
+                        }
+                        guesses++;
+                    }
+                    if (x == y) {
+                        System.out.println("Good job " + a + "! You guessed my number in " + (guesses - 1) + " guesses!");
+                        System.out.println("Would you like to play again? (y or n) ");
+                    }//integer exception end
                 }
-                catch (Exception e) {
-                    System.out.println("Input Error. Please enter a number between 1 and 20");
-                    sc.next();
-                }
-
-            }while(error = true);
-
+                error = false;
+            }
+            catch (Exception e) {
+                System.out.println("Input Error. Please enter a number between 1 and 20");
+                sc.next();
+            }
         }
         playAgain = sc.next();//string exception
-        }
     }
+}
 
