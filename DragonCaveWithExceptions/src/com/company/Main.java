@@ -26,8 +26,8 @@ public class Main {
                 }
                 error = false;
             }
-            catch (InputMismatchException e) {
-                System.out.println("Input is not an integer. Please Enter 1 or 2.");
+            catch (Exception e) {
+                System.out.println("Input Error. Please Enter 1 or 2.");
                 sc.next();
             }
         }while(error);
