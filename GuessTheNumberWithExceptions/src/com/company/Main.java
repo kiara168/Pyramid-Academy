@@ -14,41 +14,34 @@ public class Main {
         String a = sc.next();//string exception
         System.out.println("Well, " + a + ", I am thinking of a number between 1 and 20.");
 
-        while (playAgain.equalsIgnoreCase("Y") && error == true) {// allows for play again
-            System.out.println("Take a guess.");
+        try {
+            while (playAgain.equalsIgnoreCase("Y")) {
+                System.out.println("Take a guess.");
+                Random rand = new Random();
+                int y = rand.nextInt(20) + 1;
 
-            Random rand = new Random();
-            int y = rand.nextInt(20) + 1;
-
-
-            try {
                 int x = sc.nextInt();//integer exception start
                 int guesses = 1;
                 guesses++;
                 int limit = 7;
-                boolean notInt = true;
+                //boolean notInt = true;
                 while (guesses < limit && x != y) {// allows for multiple guesses
                     if (x < y) {
                         System.out.println("Your guess is too low.");
                         System.out.println("Take a guess.");
                         try {
                             x = sc.nextInt();
-                            notInt = false;
-                        }
-                        catch (Exception e) {
+                        } catch (Exception e) {
                             System.out.println("Input Error. Please enter a number between 1 and 20");
                             sc.next();
                         }
                         guesses++;
-                    }
-                    else if (x > y) {
+                    } else if (x > y) {
                         System.out.println("Your guess is too high.");
                         System.out.println("Take a guess.");
                         try {
                             x = sc.nextInt();
-                            notInt = false;
-                        }
-                        catch (Exception e) {
+                        } catch (Exception e) {
                             System.out.println("Input Error. Please enter a number between 1 and 20");
                             sc.next();
                         }
@@ -59,14 +52,14 @@ public class Main {
                         System.out.println("Would you like to play again? (y or n) ");
                     }//integer exception end
                 }
-                error = false;
-            }
-            catch (Exception e) {
-                System.out.println("Input Error. Please enter a number between 1 and 20");
-                sc.next();
+                playAgain = sc.next();//string exception
             }
         }
-        playAgain = sc.next();//string exception
+        catch (Exception e) {
+            System.out.println("Input Error. Please enter a number between 1 and 20");
+            sc.next();
+        }
+
     }
 }
 
