@@ -50,10 +50,11 @@ public class Main {
                     if (x == y) {
                         System.out.println("Good job " + a + "! You guessed my number in " + (guesses - 1) + " guesses!");
                         System.out.println("Would you like to play again? (y or n) ");
-                    }//integer exception end
+                    }
                 }
                 playAgain = sc.next();//string exception
             }
+
         }
         catch (Exception e) {
             System.out.println("Input Error. Please enter a number between 1 and 20");
