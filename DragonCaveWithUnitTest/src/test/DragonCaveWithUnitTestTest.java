@@ -5,10 +5,14 @@ class DragonCaveWithUnitTestTest {
 
     @BeforeEach
     void setUp() {
+        Object DragonCaveWithUnitTest = new DragonCaveWithUnitTest();
     }
 
     @Test
-    void main() {
+    void main(String[] args) {
+        int a = 1;
+        System.out.print(DragonCaveWithUnitTest.main(String[] args));
+        assertEquals("",DragonCaveWithUnitTest.main(),"Test failed");
     }
 
     @AfterEach
