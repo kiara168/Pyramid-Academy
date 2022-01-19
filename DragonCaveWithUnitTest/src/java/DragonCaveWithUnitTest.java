@@ -24,13 +24,13 @@ public class DragonCaveWithUnitTest {
     public static String Intro() {
         return "You are in a land full of Dragons. In front of you, \nyou see two caves. In one cave, the dragon is friendly \nand will share his treasure with you. The other dragon \nis greedy and hungry and will eat you on sight. \nWhich cave will you go into? (1 or 2)";
     }
-    public static void WhichDragon(int x) {
+    public static String WhichDragon(int x) {
         if (x == 1) {
-            System.out.println("You approach the cave... \nIt is dark and spooky... \nA large dragon jumps out in front of you! He opens his jaws and... \nGobbles you down in one bite!");
+            return "You approach the cave... \nIt is dark and spooky... \nA large dragon jumps out in front of you! He opens his jaws and... \nGobbles you down in one bite!";
             //if 1 you got the mean dragon
         }
         else {
-            System.out.println("You approach the cave... \nIt is dark and spooky... \nA large dragon jumps out in front of you! He opens his jaws and... \nTells you that you can take as much treasure as you want!");
+            return "You approach the cave... \nIt is dark and spooky... \nA large dragon jumps out in front of you! He opens his jaws and... \nTells you that you can take as much treasure as you want!";
         }
     }
 }

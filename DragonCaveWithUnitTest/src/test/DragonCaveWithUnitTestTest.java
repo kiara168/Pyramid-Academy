@@ -11,23 +11,11 @@ class DragonCaveWithUnitTestTest {
     }
 
     @Test
-    String Intro(){
-        System.out.print(Intro());
-        assertEquals("You are in a land full of Dragons. In front of you, \nyou see two caves. In one cave, the dragon is friendly \nand will share his treasure with you. The other dragon \nis greedy and hungry and will eat you on sight. \nWhich cave will you go into? (1 or 2)", Intro(), "test failed");
-        return Intro();
+    void WhichDragon(){
+        assertEquals("You approach the cave... \nIt is dark and spooky... \nA large dragon jumps out in front of you! He opens his jaws and... \nGobbles you down in one bite!", DragonCaveWithUnitTest.WhichDragon(1), "test 1 failed");
+        assertEquals("You approach the cave... \nIt is dark and spooky... \nA large dragon jumps out in front of you! He opens his jaws and... \nTells you that you can take as much treasure as you want!", DragonCaveWithUnitTest.WhichDragon(2), "Test 2 failed");
     }
 
-    @Test
-    void WhichDragon(int x){
-        System.out.print(DragonCaveWithUnitTest.WhichDragon(1));
-        System.out.print(WhichDragon (2));
-    }
-
-    //@Test
-   // void main(String[] args) {
-        //System.out.print(main(String[] args));
-        //assertEquals("",main(String[] args),"Test failed");
-   // }
 
     @AfterEach
     void tearDown() {
