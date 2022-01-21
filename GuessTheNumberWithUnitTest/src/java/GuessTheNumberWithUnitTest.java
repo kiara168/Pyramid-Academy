@@ -1,5 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class GuessTheNumberWithUnitTest {
 
@@ -15,8 +16,8 @@ public class GuessTheNumberWithUnitTest {
         try {
             while (playAgain.equalsIgnoreCase("Y")) {
                 System.out.println("Take a guess.");
-                Random rand = new Random();
-                int y = rand.nextInt(20) + 1;
+               // Random rand = new Random();
+                int y = getNumberByComputer();
 
                 int x = sc.nextInt();//integer exception start
                 int guesses = 1;
@@ -25,8 +26,7 @@ public class GuessTheNumberWithUnitTest {
                 //boolean notInt = true;
                 while (guesses < limit && x != y) {// allows for multiple guesses
                     if (x < y) {
-                        System.out.println("Your guess is too low.");
-                        System.out.println("Take a guess.");
+                        toLow();
                         try {
                             x = sc.nextInt();
                         } catch (Exception e) {
@@ -35,8 +35,7 @@ public class GuessTheNumberWithUnitTest {
                         }
                         guesses++;
                     } else if (x > y) {
-                        System.out.println("Your guess is too high.");
-                        System.out.println("Take a guess.");
+                        toHigh();
                         try {
                             x = sc.nextInt();
                         } catch (Exception e) {
@@ -59,6 +58,18 @@ public class GuessTheNumberWithUnitTest {
             sc.next();
         }
 
+    }
+
+    public static int getNumberByComputer() {
+        return ThreadLocalRandom.current().nextInt(1, 21);
+    }
+
+    public static String toHigh() {
+        return "Your guess is too high. \nTake a guess.";
+    }
+
+    public static String toLow() {
+        return "Your guess is too low. \nTake a guess.";
     }
 
 }
