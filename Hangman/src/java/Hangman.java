@@ -5,24 +5,68 @@ import java.util.Scanner;
 public class Hangman {
     //computer thinks of a word and draws a blank line for each letter of the word
     //user inputs guesses for letters in the word.
+
+    //private ArrayList<String> words; a list of words to pick from
+    //private char[] wordToGuess; //the target word we're trying to guess
+    //private char[] wordSoFar; //the word we've guessed so far (starts out as underscores!)
+    //private ArrayList<Character> alreadyGuessed; //the list of characters we've guessed
+    //private Random gen = new Random(); //a random generator for generating random numbers
+    //private ArrayList<String> missedLetters; //wrong guesses
+
     //main:
     //make hangman drawing
+    // public static main(String args[]){
+    //System.out.println("HANGMAN");
+    //System.out.println("+---+");
+    // nextLine();
+    //System.out.println("|");
+    // nextLine();
+    //System.out.println("|");
+    // nextLine();
+    //System.out.println("|");
+    // nextLine();
+    //System.out.println("===");
+    //nextLine();
+    //System.out.println("Missed Letters: " + missedLetters);
+
     //get random word from computer
+    //pick a random word
+    //WordList list = new WordList(); //the list of words
+    //words = list.getWords(); //put the list in the words ArrayList
+    //words = new ArrayList<String>(); //make an empty word ArrayList
+    //words.add(debugWord); //add just the debugWord
+
     //create blank spaces for that word
+    //int randIndex = gen.nextInt(words.size()); //pick a random item from teh list
+    //wordToGuess = words.get(randIndex).toCharArray(); //get that item and convert to a charArray to store
+    //wordSoFar = new char[wordToGuess.length]; //make the wordSoFar (which has the same length
+    //for(int i=0; i<wordToGuess.length; i++) //fill with underscores
+    //   {
+    //      wordSoFar[i] = '_';
+    //    }
+    //
+    //alreadyGuessed = new ArrayList<Character>(); //initialize the alreadyGuessed array
+    // Scanner sc = new Scanner():
+    // guess = sc.nextLine();
     //call method 1
     // as many guess as length of word
     //allow for play again
-//    public static void main(String args[]){
-//        Scanner sc = new Scanner(System.in);
-//
-//    }
+
 
     //method 1
     //get user guess, if guess in word, put it into the right spot in blanks
     //if guess not in word, add to the hangman /call method 2
     //if guess already guessed choose another guess
 //    return String;
-//    }public static String getGuesses(int x){
+//    public static String getGuesses(String guess){
+    //for( var letter : wordToGuess){
+    //   if(letter = guess){
+    //     wordSoFar[letter.length - 1] = guess;
+    //   }
+    //   else{
+    //      missedLetters += guess;
+    //      call method 2
+    //   }
 //
 
 
