@@ -1,28 +1,23 @@
-public class Goblin{
+/**
+ * a goblin is an entity and has 50 HP
+ * is has the UTF char 'G'
+ */
 
-        int strength;
-        String stamina;
-        String name;
-        String color;
+public class Goblin extends Entity{
 
-        // Do not change the constructor for goblin please!
-        public Goblin() {
-        }
-        public Goblin(int strength){
-            this.strength = strength;
-        }
+        private float health;
 
-
-        public int getStrength() {
-            return strength;
+        public Goblin(int x, int y) {
+                super(x, y, 'G');
+                health = 50.0f;
         }
 
-        // ↓↓↓↓ your code goes here ↓↓↓↓
-        //methid attack
-        //add health to zombie by goblin strength and return zombie;
-//        public Zombie attack(Zombie opponent) {
-//            opponent.setHealth(this.strength + opponent.getHealth());
-//            return opponent;
-//        }
+        public float getHealth() {
+                return health;
+        }
+
+        public void setHealth(float value) {
+                this.health = value;
+        }
 }
 
